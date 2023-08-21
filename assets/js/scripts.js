@@ -5016,8 +5016,8 @@
                play = $this.data('play'),
                controls;
             $this.data('controls') != false ? controls = $this.data('controls').split(" ") : '';
-            playText == null ? playText = '<img src="/assets/images/Play.svg" alt="play btn">' : '';
-            pauseText == null ? pauseText = '<img src="/assets/images/Play.svg" alt="play btn">' : '';
+            playText == null ? playText = '<img src="assets/images/Play.svg" alt="play btn">' : '';
+            pauseText == null ? pauseText = '<img src="assets/images/Play.svg" alt="play btn">' : '';
             muteText == null ? muteText = '' : '';
             unmuteText == null ? unmuteText = '' : '';
             const naylaVid = new Plyr(video, {
