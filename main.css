@@ -250,7 +250,7 @@
     width: 55px;
     height: 55px;
     border-radius: 100px;
-    background: url('/assets/images/Play.svg');
+    background: url('assets/images/Play.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
