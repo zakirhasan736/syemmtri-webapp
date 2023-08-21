@@ -26,7 +26,7 @@
             supportsPassive = true;
          }
       }));
-   } catch (e) {}
+   } catch (e) { }
    var wheelOpt = supportsPassive ? {
       passive: false
    } : false;
@@ -76,9 +76,9 @@
             yPercent: -50
          });
          let xTo = gsap.quickTo(mouseCursor, "x", {
-               duration: 0.6,
-               ease: "power3"
-            }),
+            duration: 0.6,
+            ease: "power3"
+         }),
             yTo = gsap.quickTo(mouseCursor, "y", {
                duration: 0.6,
                ease: "power3"
@@ -142,15 +142,15 @@
             mouseCursor.find('.mouse-cursor-text').children('span').html(cursorText);
             mouseCursor.addClass('hover-text');
          }
-   
+
          if ($(this).is('img')) {
             mouseCursor.addClass('hover-img');
          }
-   
+
          mouseCursor.addClass('hover-size');
          mouseCursor.addClass('hover-text-element');
       });
-   
+
       $element.on('mouseleave', function () {
          mouseCursor.find('.mouse-cursor-text').children('span').html('');
          mouseCursor.removeClass('hover-size');
@@ -159,15 +159,15 @@
          mouseCursor.removeClass('hover-text');
          mouseCursor.removeClass('hover-img');
       });
-   
+
       $element.on('mousedown', function () {
          mouseCursor.addClass('hover-drag');
       });
-   
+
       $(document).on('mouseup', function () {
          mouseCursor.removeClass('hover-drag');
       });
-   
+
       $element.on('click', function () {
          console.log('Element clicked');
          mouseCursor.removeClass('hover-icon');
@@ -177,14 +177,14 @@
          mouseCursor.removeClass('hover-img');
       });
    }
-   
-   $(document).ready(function() {
+
+   $(document).ready(function () {
       // Example usage for elements with data-cursor-text attribute
       setupHoverDragClick($('[data-cursor-text]'));
-   
+
       // Example usage for draggable elements
       setupHoverDragClick($('.draggable-element'));
-   
+
       // Example usage for elements with other interactions
       setupHoverDragClick($('.other-element'));
    });
@@ -237,7 +237,7 @@
          let cursorType = $(this).data('cursor-type');
          let cursorContent = $(this).data('cursor-content');
          let cursorClass = $(this).data('cursor-class'); // Get the custom cursor class
-         
+
          if (cursorType === 'text') {
             mouseCursor.find('.mouse-cursor-text').children('span').html(cursorContent);
             mouseCursor.addClass(cursorClass); // Apply the custom cursor class
@@ -248,7 +248,7 @@
             mouseCursor.find('.mouse-cursor-icon').attr('data-icon', cursorContent);
             mouseCursor.addClass(cursorClass); // Apply the custom cursor class
          }
-         
+
          mouseCursor.addClass('hover-size');
       });
 
@@ -277,27 +277,27 @@
    // Example usage for elements with data attributes
    handleCursorEffects($('[data-cursor-type]'));
 
-      $('.bg-img-section').each(function () {
-         let sectionBgImage = $(this).data('section-bg-image');
-         let sectionBgMobile = $(this).data('section-bg-mobile');
-         let sectionBgGradient = $(this).data('section-bg-gradient');
-         
-         let backgroundImage = sectionBgImage ? `url(${sectionBgImage})` : 'none';
-         if (sectionBgMobile && window.innerWidth < 768) {
-            backgroundImage = `url(${sectionBgMobile})`;
-         }
-         
-         let combinedBackground = `
+   $('.bg-img-section').each(function () {
+      let sectionBgImage = $(this).data('section-bg-image');
+      let sectionBgMobile = $(this).data('section-bg-mobile');
+      let sectionBgGradient = $(this).data('section-bg-gradient');
+
+      let backgroundImage = sectionBgImage ? `url(${sectionBgImage})` : 'none';
+      if (sectionBgMobile && window.innerWidth < 768) {
+         backgroundImage = `url(${sectionBgMobile})`;
+      }
+
+      let combinedBackground = `
             ${sectionBgGradient},
             ${backgroundImage},
             lightgray 50% / cover no-repeat
          `;
-         
-         $(this).css({
-            'background': combinedBackground
-         });
+
+      $(this).css({
+         'background': combinedBackground
       });
-   
+   });
+
    function cursorDrag(action) {
       if (action === 'hover') {
          mouseCursor.removeClass('press')
@@ -305,7 +305,7 @@
          mouseCursor.addClass('hover-size');
          mouseCursor.addClass('multi');
       }
-      if (action === 'press') { 
+      if (action === 'press') {
          mouseCursor.addClass('press')
       }
       if (action === 'leave') {
@@ -451,7 +451,7 @@
                ease: 'expo.inOut'
             }, 'label_' + snapPerc);
          }
-      }).done(function () {});
+      }).done(function () { });
    };
 
    function smoothScroll() {
@@ -879,10 +879,10 @@
                   link.wrapInner('<span class="hov_span" data-text="' + link.text() + '"></span>');
                   if (menuItem.hasClass('has-children')) {
                      var subMenuIn = gsap.timeline({
-                           onStart: () => {
-                              subMenuOut.pause();
-                           },
-                        }),
+                        onStart: () => {
+                           subMenuOut.pause();
+                        },
+                     }),
                         subMenuOut = gsap.timeline({
                            onStart: () => {
                               subMenuIn.pause();
@@ -1310,7 +1310,7 @@
                start: 'top bottom',
                end: 'bottom top',
                scrub: true,
-               onUpdate: () => {}
+               onUpdate: () => { }
             }
          })
       })
@@ -1736,7 +1736,7 @@
                textAnim.tl.revert();
                new naylaTextAnimation($this);
             }
-            return () => {}
+            return () => { }
          });
          if ($this.hasClass('wordsJustifyCollapse') || $this.hasClass('wordsJustifyExpand')) {
             let words = $this.find('.anim_word'),
@@ -1893,7 +1893,7 @@
             inertia: true,
             zIndexBoost: false,
          });
-         return () => {}
+         return () => { }
       });
    }
 
@@ -2531,7 +2531,7 @@
                isMobile
             } = context.conditions;
             tl.revert()
-            return () => {}
+            return () => { }
          });
       })
    }
@@ -2965,7 +2965,7 @@
                               trigger: fsSlideshow,
                               start: 'top top',
                               end: 'center top',
-                              onLeave: function () {},
+                              onLeave: function () { },
                               onLeaveBack: (self) => {
                                  setTimeout(function () {
                                     self.kill();
@@ -3469,17 +3469,17 @@
          })
          colorAnim ? layoutChange(overlay, $('.project_0'), projectsWrap) : '';
          var titlesSlider = new Swiper('.fc-slideshow-wrap', {
-               slidesPerView: 'auto',
-               centeredSlides: true,
-               speed: 1500,
-               noSwiping: true,
-               slideToClickedSlide: true,
-               allowTouchMove: false,
-               mousewheel: {
-                  invert: false,
-                  eventsTarget: '.dragging-class'
-               }
-            }),
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            speed: 1500,
+            noSwiping: true,
+            slideToClickedSlide: true,
+            allowTouchMove: false,
+            mousewheel: {
+               invert: false,
+               eventsTarget: '.dragging-class'
+            }
+         }),
             interleaveOffset = 0.5,
             imagesSlider = new Swiper('.fc-images-slider', {
                slidesPerView: 1,
@@ -3778,8 +3778,8 @@
 
          function zoomIn(active) {
             let state = Flip.getState(projects, {
-                  props: 'opacity, filter'
-               }),
+               props: 'opacity, filter'
+            }),
                tl = gsap.timeline(),
                left = positions[active.data('index')][1] - 25,
                top = positions[active.data('index')][0] - 25;
@@ -3817,8 +3817,8 @@
 
          function zoomOut() {
             let state = Flip.getState(projects, {
-                  props: 'opacity, filter'
-               }),
+               props: 'opacity, filter'
+            }),
                tl = gsap.timeline();
             projects.removeClass('active');
             gsap.set(wrapper, {
@@ -4199,15 +4199,15 @@
          itemsLenght = $items.length,
          thumbsDragger, thumbsWheeler;
       const $lightbox = $('<div>', {
-            class: 'nayla-lightbox-hold',
-            html: `
+         class: 'nayla-lightbox-hold',
+         html: `
                     <div class="lightbox-overlay"></div>
                     <div class="lightbox-gal"></div>
                     <span class="active-hold"></span>
                     <div class="lightbox-close">CLOSE</div>
                     <div class="lightbox-fraction"><div class="lf-curr"></div><div class="lf-tot">${itemsLenght}</div></div>
                        `
-         }),
+      }),
          lightboxReset = $lightbox.html(),
          itemsState = Flip.getState($items, {
             props: 'padding , opacity, filter'
@@ -4361,10 +4361,10 @@
 
       function lightboxAnim(direction) {
          let tl = gsap.timeline({
-               onStart: () => {
-                  $('body').css('cursor', 'wait')
-               },
-            }),
+            onStart: () => {
+               $('body').css('cursor', 'wait')
+            },
+         }),
             lightbox = $lightbox,
             overlay = lightbox.find('.lightbox-overlay');
          if (direction === 'in') {
@@ -4500,232 +4500,232 @@
    function naylaDynamicCarousel() {
       const carousel = $('.nayla-dynamic-carousel');
       carousel.each(function () {
-          let carousel = $(this),
-              wrapper = carousel.children('.carousel--wrapper'),
-              items = wrapper.children('.carousel--item'),
-              end, length = items.length,
-              parentLeft, next = carousel.find('.carousel--next'),
-              prev = carousel.find('.carousel--prev'),
-              animation = carousel.data('animation'),
-              customPin = carousel.data('pin'),
-              speed = carousel.data('scroll-speed'),
-              carouselDrag, wrapScroll, val;
-          val = 0;
-          end = wrapper.outerWidth() - items.last().outerWidth() - (items.last().outerWidth() / 2);
-          parentLeft = carousel.offset().left, carousel.find('.carousel--total').html(length);
-  
-          items.each(function (i) {
-              let $this = $(this);
-              $this.attr('data-index', i);
-              $this.addClass('carousel--item--' + i);
-              if (carousel.hasClass('parallax-on')) {
-                  $this.find('img').wrap('<div class="parallax-wrap"></div>');
-                  $this.find('.parallax-wrap').css('height', $this.find('img').outerHeight());
-                  $this.find('.parallax-wrap').css('width', $this.find('img').outerWidth());
+         let carousel = $(this),
+            wrapper = carousel.children('.carousel--wrapper'),
+            items = wrapper.children('.carousel--item'),
+            end, length = items.length,
+            parentLeft, next = carousel.find('.carousel--next'),
+            prev = carousel.find('.carousel--prev'),
+            animation = carousel.data('animation'),
+            customPin = carousel.data('pin'),
+            speed = carousel.data('scroll-speed'),
+            carouselDrag, wrapScroll, val;
+         val = 0;
+         end = wrapper.outerWidth() - items.last().outerWidth() - (items.last().outerWidth() / 2);
+         parentLeft = carousel.offset().left, carousel.find('.carousel--total').html(length);
+
+         items.each(function (i) {
+            let $this = $(this);
+            $this.attr('data-index', i);
+            $this.addClass('carousel--item--' + i);
+            if (carousel.hasClass('parallax-on')) {
+               $this.find('img').wrap('<div class="parallax-wrap"></div>');
+               $this.find('.parallax-wrap').css('height', $this.find('img').outerHeight());
+               $this.find('.parallax-wrap').css('width', $this.find('img').outerWidth());
+               $this.find('img').css('width', mobileQuery.matches ? 'calc(100% + 50px)' : 'calc(100% + 100px)');
+               $(window).on('resize', () => {
+                  $this.find('.parallax-wrap').css('width', $this.outerWidth());
                   $this.find('img').css('width', mobileQuery.matches ? 'calc(100% + 50px)' : 'calc(100% + 100px)');
-                  $(window).on('resize', () => {
-                      $this.find('.parallax-wrap').css('width', $this.outerWidth());
-                      $this.find('img').css('width', mobileQuery.matches ? 'calc(100% + 50px)' : 'calc(100% + 100px)');
-                  });
-              }
-              if (animation != null) {
-                  let stg = 0;
-                  carousel.attr('data-stagger') < 0 ? stg = -1 * (carousel.attr('data-stagger') / i) : stg = carousel.attr('data-stagger') * i;
-                  $this.addClass(animation);
-                  $this.attr('data-duration', carousel.attr('data-duration'));
-                  $this.attr('data-delay', stg);
-                  $this.attr('data-block-color', carousel.attr('data-block-color'));
-                  carousel.hasClass('image-carousel') ? new naylaImageAnimation($this) : new naylaGeneralAnimations($this);
-              }
-          });
-  
-          function getCurrentItem() {
-              items.each(function () {
-                  let $this = $(this),
-                      pad = $this.css('paddingRight'),
-                      entrance = $this.offset().left,
-                      deadLine = $this.offset().left + $this.outerWidth(),
-                      center = $(window).outerWidth() / 2;
-                  entrance < center && center < deadLine ? $this.addClass('active') : $this.removeClass('active');
-                  let activeItem = wrapper.find('.carousel--item.active');
-                  items.removeClass('prev next');
-                  prev.removeClass('disabled');
-                  next.removeClass('disabled');
-                  !activeItem.next().length ? next.addClass('disabled') : activeItem.next().addClass('next');
-                  !activeItem.prev().length ? prev.addClass('disabled') : activeItem.prev().addClass('prev');
-                  activeItem.data('index') == null ? '' : carousel.find('.carousel--current').html(activeItem.data('index') + 1);
-                  if (carousel.hasClass('parallax-on')) {
-                      let piv = ScrollTrigger.positionInViewport(this, 'right', true) * (mobileQuery.matches ? 50 : 100);
-                      if ($this.find('img').length) {
-                          gsap.to($this.find('img'), {
-                              x: Math.floor(-piv)
-                          });
-                      }
-                  }
-              });
-          }
-          getCurrentItem();
+               });
+            }
+            if (animation != null) {
+               let stg = 0;
+               carousel.attr('data-stagger') < 0 ? stg = -1 * (carousel.attr('data-stagger') / i) : stg = carousel.attr('data-stagger') * i;
+               $this.addClass(animation);
+               $this.attr('data-duration', carousel.attr('data-duration'));
+               $this.attr('data-delay', stg);
+               $this.attr('data-block-color', carousel.attr('data-block-color'));
+               carousel.hasClass('image-carousel') ? new naylaImageAnimation($this) : new naylaGeneralAnimations($this);
+            }
+         });
 
-          function navDrag() {
-              wrapper.addClass('cursor-text');
-              wrapper.attr('data-cursor-text', carousel.attr('data-drag-text'));
-              carouselDrag = Draggable.create(wrapper, {
-                  type: 'x',
-                  bounds: {
-                      minX: 0,
-                      maxX: -end
-                  },
-                  lockAxis: true,
-                  dragResistance: 0.5,
-                  inertia: true,
-                  onThrowUpdate: () => {
-                      getCurrentItem();
-                      val = carouselDrag[0].x * -1;
-                  },
-                  zIndexBoost: false,
-                  onDrag: () => {
-                      getCurrentItem();
-                      val = carouselDrag[0].x * -1;
+         function getCurrentItem() {
+            items.each(function () {
+               let $this = $(this),
+                  pad = $this.css('paddingRight'),
+                  entrance = $this.offset().left,
+                  deadLine = $this.offset().left + $this.outerWidth(),
+                  center = $(window).outerWidth() / 2;
+               entrance < center && center < deadLine ? $this.addClass('active') : $this.removeClass('active');
+               let activeItem = wrapper.find('.carousel--item.active');
+               items.removeClass('prev next');
+               prev.removeClass('disabled');
+               next.removeClass('disabled');
+               !activeItem.next().length ? next.addClass('disabled') : activeItem.next().addClass('next');
+               !activeItem.prev().length ? prev.addClass('disabled') : activeItem.prev().addClass('prev');
+               activeItem.data('index') == null ? '' : carousel.find('.carousel--current').html(activeItem.data('index') + 1);
+               if (carousel.hasClass('parallax-on')) {
+                  let piv = ScrollTrigger.positionInViewport(this, 'right', true) * (mobileQuery.matches ? 50 : 100);
+                  if ($this.find('img').length) {
+                     gsap.to($this.find('img'), {
+                        x: Math.floor(-piv)
+                     });
                   }
-              });
-          }
+               }
+            });
+         }
+         getCurrentItem();
 
-          function navScroll() {
-              let endtrigger = speed == null ? 'bottom+=3000 bottom' : 'bottom+=' + speed + ' bottom',
-                  start = customPin == null ? 'center center' : 'top top',
-                  pinTarget = customPin == null ? carousel : customPin,
-                  endNumber = speed == null ? 1000 : 1000 + speed;
-              if (carousel.hasClass('items-bottom')) {
-                  start = 'bottom bottom';
-              }
-              wrapScroll = gsap.timeline({
-                  scrollTrigger: {
-                      trigger: pinTarget,
-                      start: start,
-                      end: carousel.offset().top < $(window).outerHeight() ? endNumber : endtrigger,
-                      pin: true,
-                      id: 'caroScroll',
-                      scrub: 1,
-                      pinReparent: $('body').hasClass('smooth-scroll') ? true : false,
-                      onLeaveBack: () => getCurrentItem(),
-                      onEnterBack: () => getCurrentItem(),
-                      onScrubComplete: () => getCurrentItem(),
-                      onEnter: () => getCurrentItem(),
-                      onLeave: () => getCurrentItem(),
-                      onUpdate: () => getCurrentItem()
+         function navDrag() {
+            wrapper.addClass('cursor-text');
+            wrapper.attr('data-cursor-text', carousel.attr('data-drag-text'));
+            carouselDrag = Draggable.create(wrapper, {
+               type: 'x',
+               bounds: {
+                  minX: 0,
+                  maxX: -end
+               },
+               lockAxis: true,
+               dragResistance: 0.5,
+               inertia: true,
+               onThrowUpdate: () => {
+                  getCurrentItem();
+                  val = carouselDrag[0].x * -1;
+               },
+               zIndexBoost: false,
+               onDrag: () => {
+                  getCurrentItem();
+                  val = carouselDrag[0].x * -1;
+               }
+            });
+         }
+
+         function navScroll() {
+            let endtrigger = speed == null ? 'bottom+=3000 bottom' : 'bottom+=' + speed + ' bottom',
+               start = customPin == null ? 'center center' : 'top top',
+               pinTarget = customPin == null ? carousel : customPin,
+               endNumber = speed == null ? 1000 : 1000 + speed;
+            if (carousel.hasClass('items-bottom')) {
+               start = 'bottom bottom';
+            }
+            wrapScroll = gsap.timeline({
+               scrollTrigger: {
+                  trigger: pinTarget,
+                  start: start,
+                  end: carousel.offset().top < $(window).outerHeight() ? endNumber : endtrigger,
+                  pin: true,
+                  id: 'caroScroll',
+                  scrub: 1,
+                  pinReparent: $('body').hasClass('smooth-scroll') ? true : false,
+                  onLeaveBack: () => getCurrentItem(),
+                  onEnterBack: () => getCurrentItem(),
+                  onScrubComplete: () => getCurrentItem(),
+                  onEnter: () => getCurrentItem(),
+                  onLeave: () => getCurrentItem(),
+                  onUpdate: () => getCurrentItem()
+               }
+            });
+            wrapScroll.to(wrapper, {
+               x: -end,
+            });
+         }
+         var snaps;
+
+         function getSnaps() {
+            snaps = items.map(function () {
+               if (mobileQuery.matches) {
+                  return -($(this).position().left + ($(this).outerWidth()) + parentLeft);
+               } else {
+                  return -($(this).position().left + ($(this).outerWidth() / 2) + parentLeft);
+               }
+            }).get();
+         }
+
+         function navPrevNext() {
+            next.on('click', function () {
+               getSnaps();
+               let nextProj = wrapper.find('.carousel--item.next'),
+                  marg = parseInt(nextProj.css('marginRight')),
+                  index = nextProj.data('index') - 1;
+               gsap.to(wrapper, {
+                  x: mobileQuery.matches ? snaps[index] : snaps[index] + marg,
+                  duration: 1.5,
+                  ease: 'expo.out',
+                  onUpdate: () => {
+                     getCurrentItem();
+                     carouselDrag ? carouselDrag[0].update() : '';
                   }
-              });
-              wrapScroll.to(wrapper, {
+               });
+            });
+            prev.on('click', function () {
+               getSnaps();
+               let prevProj = wrapper.find('.carousel--item.prev'),
+                  marg = parseInt(prevProj.css('marginRight')),
+                  index = prevProj.data('index') - 1,
+                  val = snaps[index];
+               val == null ? val = 0 : '';
+               gsap.to(wrapper, {
+                  x: mobileQuery.matches ? val : val + marg,
+                  duration: 1.5,
+                  ease: 'expo.out',
+                  onUpdate: () => {
+                     getCurrentItem();
+                     carouselDrag ? carouselDrag[0].update() : '';
+                  }
+               });
+            });
+         }
+         carousel.hasClass('navScroll') ? navScroll() : navDrag();
+         carousel.find('.carousel--navigation').length ? navPrevNext() : '';
+         matchMedia.add({
+            isMobile: "(max-width: 450px)"
+         }, (context) => {
+            let {
+               isMobile
+            } = context.conditions;
+            gsap.set(wrapper, {
+               x: 0
+            });
+            gsap.set(wrapper.find('img'), {
+               clearProps: 'transform'
+            });
+            parentLeft = carousel.offset().left;
+            gsap.set(items.find('img'), {
+               clearProps: 'transform'
+            });
+            end = wrapper.outerWidth() - items.last().outerWidth();
+            if (carouselDrag) {
+               carouselDrag[0].applyBounds({
+                  minX: 0,
+                  maxX: -end
+               });
+               carouselDrag[0].update();
+            }
+            if (wrapScroll) {
+               wrapScroll.clear();
+               wrapScroll.to(wrapper, {
                   x: -end,
-              });
-          }
-          var snaps;
-
-          function getSnaps() {
-              snaps = items.map(function () {
-                  if (mobileQuery.matches) {
-                      return -($(this).position().left + ($(this).outerWidth()) + parentLeft);
-                  } else {
-                      return -($(this).position().left + ($(this).outerWidth() / 2) + parentLeft);
-                  }
-              }).get();
-          }
-
-          function navPrevNext() {
-              next.on('click', function () {
-                  getSnaps();
-                  let nextProj = wrapper.find('.carousel--item.next'),
-                      marg = parseInt(nextProj.css('marginRight')),
-                      index = nextProj.data('index') - 1;
-                  gsap.to(wrapper, {
-                      x: mobileQuery.matches ? snaps[index] : snaps[index] + marg,
-                      duration: 1.5,
-                      ease: 'expo.out',
-                      onUpdate: () => {
-                          getCurrentItem();
-                          carouselDrag ? carouselDrag[0].update() : '';
-                      }
-                  });
-              });
-              prev.on('click', function () {
-                  getSnaps();
-                  let prevProj = wrapper.find('.carousel--item.prev'),
-                      marg = parseInt(prevProj.css('marginRight')),
-                      index = prevProj.data('index') - 1,
-                      val = snaps[index];
-                  val == null ? val = 0 : '';
-                  gsap.to(wrapper, {
-                      x: mobileQuery.matches ? val : val + marg,
-                      duration: 1.5,
-                      ease: 'expo.out',
-                      onUpdate: () => {
-                          getCurrentItem();
-                          carouselDrag ? carouselDrag[0].update() : '';
-                      }
-                  });
-              });
-          }
-          carousel.hasClass('navScroll') ? navScroll() : navDrag();
-          carousel.find('.carousel--navigation').length ? navPrevNext() : '';
-          matchMedia.add({
-              isMobile: "(max-width: 450px)"
-          }, (context) => {
-              let {
-                  isMobile
-              } = context.conditions;
-              gsap.set(wrapper, {
+               });
+            }
+            return () => {
+               gsap.set(wrapper.find('img'), {
+                  clearProps: 'transform'
+               });
+               gsap.set(wrapper, {
                   x: 0
-              });
-              gsap.set(wrapper.find('img'), {
+               });
+               parentLeft = carousel.offset().left;
+               gsap.set(items.find('img'), {
                   clearProps: 'transform'
-              });
-              parentLeft = carousel.offset().left;
-              gsap.set(items.find('img'), {
-                  clearProps: 'transform'
-              });
-              end = wrapper.outerWidth() - items.last().outerWidth();
-              if (carouselDrag) {
+               });
+               end = wrapper.outerWidth() - items.last().outerWidth() - (items.last().outerWidth() / 2);
+               if (carouselDrag) {
                   carouselDrag[0].applyBounds({
-                      minX: 0,
-                      maxX: -end
+                     minX: 0,
+                     maxX: -end
                   });
                   carouselDrag[0].update();
-              }
-              if (wrapScroll) {
+               }
+               if (wrapScroll) {
                   wrapScroll.clear();
                   wrapScroll.to(wrapper, {
-                      x: -end,
+                     x: -end,
                   });
-              }
-              return () => {
-                  gsap.set(wrapper.find('img'), {
-                      clearProps: 'transform'
-                  });
-                  gsap.set(wrapper, {
-                      x: 0
-                  });
-                  parentLeft = carousel.offset().left;
-                  gsap.set(items.find('img'), {
-                      clearProps: 'transform'
-                  });
-                  end = wrapper.outerWidth() - items.last().outerWidth() - (items.last().outerWidth() / 2);
-                  if (carouselDrag) {
-                      carouselDrag[0].applyBounds({
-                          minX: 0,
-                          maxX: -end
-                      });
-                      carouselDrag[0].update();
-                  }
-                  if (wrapScroll) {
-                      wrapScroll.clear();
-                      wrapScroll.to(wrapper, {
-                          x: -end,
-                      });
-                  }
-              };
-          });
+               }
+            };
+         });
       });
-  }
+   }
 
 
    function naylaParallax() {
@@ -4865,7 +4865,7 @@
             isMobile: "(max-width: 450px)"
          }, (context) => {
             pinnedScroll.kill()
-            return () => {}
+            return () => { }
          });
       })
    }
@@ -6363,8 +6363,8 @@
    function getMediaToCenter() {
       var media = document.querySelector('.transition--media')
       let state = Flip.getState(media, {
-            props: 'top, left, x, y'
-         }),
+         props: 'top, left, x, y'
+      }),
          height = media.offsetHeight,
          width = media.offsetWidth;
       gsap.set(media, {
@@ -6395,8 +6395,8 @@
    function getMediaPosition() {
       var media = document.querySelector('.transition--media')
       let state = Flip.getState(media, {
-            props: 'top, left, x, y'
-         }),
+         props: 'top, left, x, y'
+      }),
          height = media.offsetHeight,
          width = media.offsetWidth;
       gsap.set(media, {
@@ -6434,7 +6434,7 @@
    }
 
    function projectBackground(current, next, tl) {
-      if (current === next) {} else {
+      if (current === next) { } else {
          let ov = document.createElement('span')
          ov.classList.add('project-trans-overlay');
          ov.style.backgroundColor = next;
@@ -6602,10 +6602,10 @@
             return new Promise(function (resolve, reject) {
                transitions.addClass('running')
                let tl = gsap.timeline({
-                     onComplete: () => {
-                        resolve();
-                     }
-                  }),
+                  onComplete: () => {
+                     resolve();
+                  }
+               }),
                   toggle = $('.menu-toggle');
                toggle.trigger('click')
                gsap.getTweensOf('.menu-overlay')[0].kill();
@@ -6621,16 +6621,16 @@
          beforeEnter() {
             return new Promise(function (resolve, reject) {
                let tl = gsap.timeline({
-                     onStart: () => {
-                        resolve();
-                        transitions.removeClass('running')
-                     },
-                     onComplete: () => {
-                        gsap.set(transitions, {
-                           clearProps: 'all'
-                        })
-                     }
-                  }),
+                  onStart: () => {
+                     resolve();
+                     transitions.removeClass('running')
+                  },
+                  onComplete: () => {
+                     gsap.set(transitions, {
+                        clearProps: 'all'
+                     })
+                  }
+               }),
                   overlay = $('.menu-overlay');
                tl.to(overlay, {
                   height: 0,
@@ -6717,7 +6717,7 @@
                $('div.showcase-fullscreen-carousel').length ? fullscreenCarouselIn(tl) : null;
             })
          }
-      }, ]
+      },]
    })
    if (history.scrollRestoration) {
       history.scrollRestoration = "manual";

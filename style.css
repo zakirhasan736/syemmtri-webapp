@@ -2560,7 +2560,7 @@ div#mouseCursor.circle .main-circle {
 div#mouseCursor.dot .main-circle {
   stroke: none;
   stroke-width: none;
-  fill: #c6e743;
+  fill: transparent !important;
 }
 
 .mouse-cursor-icon,
@@ -2660,7 +2660,7 @@ div#mouseCursor.circle.light .main-circle {
 }
 
 div#mouseCursor.dot.light .main-circle {
-  fill: #fff;
+  fill: none;
 }
 div#mouseCursor.dot.hover-text-element .main-circle {
   fill: #c6e743;
@@ -2705,7 +2705,7 @@ div#mouseCursor.hover-text {
 div#mouseCursor.hover-text .main-circle {
   stroke: none;
   stroke-width: 0;
-  fill: #c6e743;
+  fill: #c6e743 !important;
   color: #000;
   text-transform: uppercase;
 }
