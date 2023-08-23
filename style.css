@@ -2575,7 +2575,7 @@ div#mouseCursor.dot .main-circle {
   opacity: 1;
   font-size: 12px;
   display: block;
-  overflow: hidden;
+  /* overflow: hidden; */
   line-height: 1;
   text-align: center;
   font-size: 12px;
@@ -3656,7 +3656,6 @@ input#quantity:focus {
   -ms-grid-column-span: 9;
   grid-column: 1/10;
 }
-
 
 ul.grid-portfolio-filtering li {
   cursor: pointer;

@@ -1376,6 +1376,35 @@ p {
   opacity: 0.4;
 }
 
+.grid-project {
+  position: relative;
+  z-index: 9999;
+}
+
+.grid-project:nth-child(6) {
+  z-index: 99991;
+}
+
+.grid-project:nth-child(5) {
+  z-index: 99992;
+}
+
+.grid-project:nth-child(4) {
+  z-index: 99993;
+}
+
+.grid-project:nth-child(3) {
+  z-index: 99994;
+}
+
+.grid-project:nth-child(2) {
+  z-index: 99995;
+}
+
+.grid-project:nth-child(1) {
+  z-index: 99996;
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -2256,10 +2285,6 @@ p {
   padding-bottom: 206px;
 }
 
-.pb-\[225px\]{
-  padding-bottom: 225px;
-}
-
 .pb-\[246px\]{
   padding-bottom: 246px;
 }
@@ -2410,14 +2435,6 @@ p {
 
 .pt-\[90px\]{
   padding-top: 90px;
-}
-
-.pb-\[1px\]{
-  padding-bottom: 1px;
-}
-
-.pb-\[12px\]{
-  padding-bottom: 12px;
 }
 
 .text-left{
@@ -2983,10 +3000,6 @@ input::placeholder {
     padding-bottom: 100px;
   }
 
-  .md\:pb-\[150px\]{
-    padding-bottom: 150px;
-  }
-
   .md\:pb-\[50px\]{
     padding-bottom: 50px;
   }
@@ -3001,6 +3014,10 @@ input::placeholder {
 
   .md\:pb-\[80px\]{
     padding-bottom: 80px;
+  }
+
+  .md\:pb-\[90px\]{
+    padding-bottom: 90px;
   }
 
   .md\:pr-0{
@@ -3049,10 +3066,6 @@ input::placeholder {
 
   .md\:pt-\[96px\]{
     padding-top: 96px;
-  }
-
-  .md\:pb-\[90px\]{
-    padding-bottom: 90px;
   }
 
   .md\:text-\[30px\]{
@@ -3187,10 +3200,6 @@ input::placeholder {
     padding-bottom: 0px;
   }
 
-  .sm\:pb-\[100px\]{
-    padding-bottom: 100px;
-  }
-
   .sm\:pb-\[102px\]{
     padding-bottom: 102px;
   }
@@ -3203,6 +3212,10 @@ input::placeholder {
     padding-bottom: 69px;
   }
 
+  .sm\:pb-\[80px\]{
+    padding-bottom: 80px;
+  }
+
   .sm\:pt-0{
     padding-top: 0px;
   }
@@ -3213,10 +3226,6 @@ input::placeholder {
 
   .sm\:pt-\[120px\]{
     padding-top: 120px;
-  }
-
-  .sm\:pb-\[80px\]{
-    padding-bottom: 80px;
   }
 
   .sm\:text-center{
@@ -3239,8 +3248,8 @@ input::placeholder {
     font-size: 42px;
   }
 
-  .sm\:text-text-xs-small{
-    font-size: 14px;
+  .sm\:text-text-extra-small{
+    font-size: 12px;
   }
 
   .sm\:opacity-60{
