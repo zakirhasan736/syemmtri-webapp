@@ -974,6 +974,17 @@ p {
   margin-bottom: 0 !important;
 }
 
+.mouse-cursor-icon,
+  .mouse-cursor-text {
+  text-align: center !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  line-height: normal !important;
+  letter-spacing: 0.192px !important;
+  text-transform: uppercase !important;
+}
+
 .primary-button.outline {
   background-color: transparent;
   border: 1px solid transparent !important;
@@ -2009,6 +2020,10 @@ p {
   cursor: pointer;
 }
 
+.cursor-text{
+  cursor: text;
+}
+
 .grid-cols-6{
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -2435,6 +2450,10 @@ p {
 
 .pt-\[90px\]{
   padding-top: 90px;
+}
+
+.pb-2{
+  padding-bottom: 0.5rem;
 }
 
 .text-left{

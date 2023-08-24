@@ -66,9 +66,19 @@
       isTablet = '(min-width: 450px) and (max-width: 900px)',
       isDesktop = '(min-width: 900px)';
 
+   let cursorText;
+   let cursorIcon;
+   let yperc;
+   let cursorActive;
+
+   $(document).ready(function () {
+      naylaMouseCursor(true);
+   });
+
+
    function naylaMouseCursor(init) {
       if (init) {
-         let cursorText = mouseCursor.children('.mouse-cursor-text').wrapInner('<span></span>'),
+         cursorText = mouseCursor.children('.mouse-cursor-text').find('span'); // Initialize cursorText
             cursorIcon = mouseCursor.children('.mouse-cursor-icon'),
             yperc, cursorActive;
          gsap.set(mouseCursor, {
@@ -102,22 +112,24 @@
       }
       defaultHover('a , .menu-toggle, .rotate-text-area , .project-slide-button, button, .hover-classic, .cv-toggle,  .scroll-button');
 
+
       function textHover(targets) {
          $(targets).on('mouseenter', function () {
             let $this = $(this),
                text = $this.data('cursor-text');
+
             mouseCursor.addClass('hover-size');
             mouseCursor.addClass('hover-text');
-            cursorText.children('span').html(text)
+            cursorText.html(text);
          })
+
          $(targets).on('mouseleave', function () {
             mouseCursor.removeClass('hover-size');
             mouseCursor.removeClass('hover-text');
-            cursorText.find('span').empty()
+            cursorText.empty();
          })
       }
       textHover('.cursor-text')
-
       function iconHover(targets) {
          $(targets).on('mouseenter', function () {
             let $this = $(this),
@@ -135,59 +147,7 @@
       iconHover('.cursor-icon, .nayla-awards-list > li > a, .showcase-carousel .showcase-project a');
    }
 
-   function setupHoverDragClick($element) {
-      $element.on('mouseenter', function () {
-         let cursorText = $(this).data('cursor-text');
-         if (cursorText) {
-            mouseCursor.find('.mouse-cursor-text').children('span').html(cursorText);
-            mouseCursor.addClass('hover-text');
-         }
 
-         if ($(this).is('img')) {
-            mouseCursor.addClass('hover-img');
-         }
-
-         mouseCursor.addClass('hover-size');
-         mouseCursor.addClass('hover-text-element');
-      });
-
-      $element.on('mouseleave', function () {
-         mouseCursor.find('.mouse-cursor-text').children('span').html('');
-         mouseCursor.removeClass('hover-size');
-         mouseCursor.removeClass('hover-text-element');
-         mouseCursor.removeClass('hover-icon');
-         mouseCursor.removeClass('hover-text');
-         mouseCursor.removeClass('hover-img');
-      });
-
-      $element.on('mousedown', function () {
-         mouseCursor.addClass('hover-drag');
-      });
-
-      $(document).on('mouseup', function () {
-         mouseCursor.removeClass('hover-drag');
-      });
-
-      $element.on('click', function () {
-         console.log('Element clicked');
-         mouseCursor.removeClass('hover-icon');
-         mouseCursor.removeClass('hover-text-element');
-         mouseCursor.removeClass('hover-size');
-         mouseCursor.removeClass('hover-text');
-         mouseCursor.removeClass('hover-img');
-      });
-   }
-
-   $(document).ready(function () {
-      // Example usage for elements with data-cursor-text attribute
-      setupHoverDragClick($('[data-cursor-text]'));
-
-      // Example usage for draggable elements
-      setupHoverDragClick($('.draggable-element'));
-
-      // Example usage for elements with other interactions
-      setupHoverDragClick($('.other-element'));
-   });
 
 
    $('.cursor-play, .cursor-image').each(function () {
@@ -6791,3 +6751,44 @@
       }, 50)
    });
 }(jQuery));
+
+// Define your cursor-related functions
+function updateCursorText(text) {
+   cursorTextElement.html(text);
+}
+
+function resetCursorClasses() {
+   mouseCursor.removeClass('hover-size hover-text-element hover-icon hover-text hover-img hover-drag');
+}
+
+function handleMouseEnter(event) {
+   const $element = $(event.target);
+   const cursorText = $element.data('cursor-text');
+
+   updateCursorText(cursorText);
+
+   // Rest of your existing code for adding classes and interactions based on the element
+}
+
+function handleMouseLeave() {
+   updateCursorText('');
+   resetCursorClasses();
+}
+
+// Check if window.onload has already fired
+if (document.readyState === 'complete') {
+   setupCursorFunctionality();
+} else {
+   window.onload = setupCursorFunctionality;
+}
+
+function setupCursorFunctionality() {
+   const mouseCursor = $('.custom-cursor');
+   const cursorTextElement = mouseCursor.find('.mouse-cursor-text').children('span');
+
+   // Attach event handlers using event delegation
+   $(document).on('mouseenter', '.n-cursor-trigger', handleMouseEnter);
+   $(document).on('mouseleave', '.n-cursor-trigger', handleMouseLeave);
+
+   // Rest of your script...
+}

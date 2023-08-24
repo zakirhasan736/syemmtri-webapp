@@ -2538,6 +2538,7 @@ div#mouseCursor.light .mouse-cursor-text {
 div#mouseCursor.dot {
   width: 15px;
   height: 15px;
+  border-radius: 100px;
 }
 
 div#mouseCursor.circle {
