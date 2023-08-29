@@ -1756,12 +1756,16 @@ p {
   position: relative;
 }
 
+.bottom-\[35px\]{
+  bottom: 35px;
+}
+
 .left-0{
   left: 0px;
 }
 
-.left-\[125px\]{
-  left: 125px;
+.right-0{
+  right: 0px;
 }
 
 .top-0{
@@ -1770,18 +1774,6 @@ p {
 
 .top-\[106px\]{
   top: 106px;
-}
-
-.bottom-\[35\]{
-  bottom: 35;
-}
-
-.bottom-\[35px\]{
-  bottom: 35px;
-}
-
-.right-0{
-  right: 0px;
 }
 
 .z-\[9999\]{
@@ -1960,16 +1952,12 @@ p {
   height: 100%;
 }
 
-.max-h-\[\]{
-  max-height: ;
-}
-
-.max-h-\[846\]{
-  max-height: 846;
-}
-
 .max-h-\[846px\]{
   max-height: 846px;
+}
+
+.max-h-\[900px\]{
+  max-height: 900px;
 }
 
 .w-\[180px\]{
@@ -2016,16 +2004,12 @@ p {
   max-width: 685px;
 }
 
-.max-w-full{
-  max-width: 100%;
-}
-
-.max-w-0{
-  max-width: 0rem;
-}
-
 .max-w-\[823px\]{
   max-width: 823px;
+}
+
+.max-w-full{
+  max-width: 100%;
 }
 
 .grow{
@@ -2160,6 +2144,10 @@ p {
 
 .self-center{
   align-self: center;
+}
+
+.overflow-hidden{
+  overflow: hidden;
 }
 
 .whitespace-nowrap{
