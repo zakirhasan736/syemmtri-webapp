@@ -940,3 +940,11 @@ input::placeholder {
 .container * {
   box-sizing: border-box;
 }
+.section.banner-section .banner-left-cont.banner-home-content .banner-main-title .banner-anima-word {
+	margin-left: auto;
+	margin-right: auto;
+}
+.section.banner-section .banner-left-cont.banner-home-content .text-wrapper > p {
+	margin-left: auto;
+	margin-right: auto;
+}
