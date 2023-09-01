@@ -2227,6 +2227,10 @@ li.service-list.accordion-item:last-child .service-accordion-desc {
   row-gap: 65px;
 }
 
+.gap-y-\[26px\]{
+  row-gap: 26px;
+}
+
 .self-center{
   align-self: center;
 }
@@ -3272,6 +3276,10 @@ input::placeholder {
 
   .sm\:mb-3{
     margin-bottom: 0.75rem;
+  }
+
+  .sm\:mb-6{
+    margin-bottom: 1.5rem;
   }
 
   .sm\:mb-\[69px\]{
