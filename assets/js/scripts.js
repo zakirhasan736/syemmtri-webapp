@@ -5279,7 +5279,7 @@
             text = $this.children('*'),
             dataDuration = $this.data('duration'),
             seperator = $this.data('seperator');
-         text.append('<span class="material-icons">' + seperator + '</span>')
+         // text.append('<span class="materials-icons">' + seperator + '</span>')
          $this.wrapInner('<div class="marquee-wrap"></div>')
          let infItem = $this.find('.marquee-wrap'),
             infWidht = infItem.outerWidth(),

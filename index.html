@@ -276,6 +276,58 @@
                                     </div>
                                     <div class="section-main-bottom-right col-span-1 md:col-span-2 sm:col-span-6"><a
                                             href="/" class="secondary-button outline">MORE</a></div>
+                                            <div class="col-span-2 lg:col-span-2 sm:col-span-6"></div>
+                                            <ul class="services-items-list col-span-4 lg:col-span-4 sm:col-span-6 pt-[134px] md:pt-[120px] sm:pt-[80px]" x-data="{ openTab: 0 }">
+                                                <li class="service-list accordion-item pb-[9px] cursor-pointer" @click="openTab = openTab === 0 ? null : 0"
+                                                    :class="{ 'accordion-content-item': true, 'open-info': openTab === 0 }">
+                                                    <div
+                                                        class="service-accordion accordion-head text-neu-white text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
+                                                        Brand
+                                                        + Content
+                                                    </div>
+                                                    <div class="service-accordion-desc accordion-desc pt-6 pb-8" x-show="openTab === 0">
+                                                        <p
+                                                            class="description-text max-w-[685px]  has-anim-text linesUp font-secondary text-body-text text-neu-white font-light leading-8 md:text-text-small">
+                                                            Whether it's shaping a memorable logo, and entire brand system or
+                                                            crafting engaging content for a campaign, we're here to amplify your
+                                                            brand's voice and leave an enduring impression.
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li class="service-list accordion-item pb-[9px] cursor-pointer" @click="openTab = openTab === 1 ? null : 1"
+                                                    :class="{ 'accordion-content-item': true, 'open-info': openTab === 1 }">
+                                                    <div class="accordion-item-wrapper w-full">
+                                                        <div
+                                                            class="service-accordion accordion-head text-neu-white text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
+                                                            Web Design + Development
+                                                        </div>
+                                                        <div class="service-accordion-desc accordion-desc pt-6 pb-8" x-show="openTab === 1">
+                                                            <p
+                                                                class="description-text max-w-[685px]  has-anim-text linesUp font-secondary text-body-text text-neu-white font-light leading-8 md:text-text-small">
+                                                                Whether it's shaping a memorable logo, and entire brand system
+                                                                or crafting engaging content for a campaign, we're here to
+                                                                amplify your brand's voice and leave an enduring impression.
+                                                            </p>
+                                                        </div>
+                                                </li>
+                                                <li class="service-list accordion-item pb-[9px] cursor-pointer" @click="openTab = openTab === 2 ? null : 2"
+                                                    :class="{ 'accordion-content-item': true, 'open-info': openTab === 2 }">
+                                                    <div class="accordion-item-wrapper w-full">
+                                                        <div
+                                                            class="service-accordion accordion-head text-neu-white text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
+                                                            Digital Marketing
+                                                        </div>
+                                                        <div class="service-accordion-desc accordion-desc pt-6 pb-8" x-show="openTab === 2">
+                                                            <p
+                                                                class="description-text max-w-[685px] font-secondary  has-anim-text linesUp text-body-text text-neu-white font-light leading-8 md:text-text-small">
+                                                                Whether it's shaping a memorable logo, and entire brand system
+                                                                or crafting engaging content for a campaign, we're here to
+                                                                amplify your brand's voice and leave an enduring impression.
+                                                            </p>
+                                                        </div>
+                                                </li>
+                                            
+                                            </ul>
                                 </div>
                             </div>
 
@@ -325,8 +377,7 @@
                                             surprise and positions brands in culture through shared values and ideals.
                                         </p>
                                     </div>
-                                    <!-- <div class="section-main-bottom-right col-span-1"><a href="/"
-                                            class="secondary-button outline">LET’S WORK</a></div> -->
+                            
                                 </div>
                             </div>
 
@@ -567,7 +618,7 @@
                     </section>
                     <!-- agencies section end here -->
                     <!-- video section start here -->
-                    <section class="section no-margin p-0 bg-white">
+                    <section class="section no-margin p-0 pb-[120px] md:pb-20 bg-white">
                         <div class="custom-container-fluid">
                             <div class="nayla-animation-wrapper has-anim scaleIn" data-start=.5 data-origin='top center'
                                 data-pin=true>
@@ -583,90 +634,7 @@
                         </div>
                     </section>
                     <!-- video section end here -->
-                    <!-- services section start here -->
-                    <section class="section no-margin pt-[60px] pb-[145px] bg-white md:pb-[100px]">
-                        <div class="custom-container-fluid grid grid-cols-6">
-                            <!-- section title start here -->
-                            <div class="section-title-box mb-20 md:mb-10 col-span-6">
-                                <h5
-                                    class="section-title pb-8 text-neu-black font-primary font-normal text-5 leading-normal uppercase">
-                                    SERVICES</h5>
-                            </div>
-                            <!-- section title end here -->
-                        </div>
-                        <div class="custom-container">
-                            <div class="service-section-wrapper">
-
-                                <div class="service-section-main-cont grid grid-cols-6 gap-x-20">
-                                    <div class="col-span-3 lg:col-span-3 sm:col-span-6"></div>
-                                    <div class="text-wrapper col-span-3 lg:col-span-3 sm:col-span-6 pb-10">
-                                        <p class="text-h6 section-main-modal-title grey big-title has-anim-text slideRight leading-none"
-                                            data-duration=2 data-scrub=true>SERVICES</p>
-                                    </div>
-                                    <div class="col-span-2 lg:col-span-2 sm:col-span-6"></div>
-                                    <ul class="services-items-list col-span-4 lg:col-span-4 sm:col-span-6"
-                                        x-data="{ openTab: 0 }">
-                                        <li class="service-list accordion-item pb-[9px] cursor-pointer"
-                                            @click="openTab = openTab === 0 ? null : 0"
-                                            :class="{ 'accordion-content-item': true, 'open-info': openTab === 0 }">
-                                            <div
-                                                class="service-accordion accordion-head text-neu-black text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
-                                                Brand
-                                                + Content
-                                            </div>
-                                            <div class="service-accordion-desc accordion-desc pt-6 pb-8"
-                                                x-show="openTab === 0">
-                                                <p
-                                                    class="description-text max-w-[685px]  has-anim-text linesUp font-secondary text-body-text text-neu-black font-light leading-8 md:text-text-small">
-                                                    Whether it's shaping a memorable logo, and entire brand system or
-                                                    crafting engaging content for a campaign, we're here to amplify your
-                                                    brand's voice and leave an enduring impression.
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li class="service-list accordion-item pb-[9px] cursor-pointer"
-                                            @click="openTab = openTab === 1 ? null : 1"
-                                            :class="{ 'accordion-content-item': true, 'open-info': openTab === 1 }">
-                                            <div class="accordion-item-wrapper w-full">
-                                                <div
-                                                    class="service-accordion accordion-head text-neu-black text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
-                                                    Web Design + Development
-                                                </div>
-                                                <div class="service-accordion-desc accordion-desc pt-6 pb-8"
-                                                    x-show="openTab === 1">
-                                                    <p
-                                                        class="description-text max-w-[685px]  has-anim-text linesUp font-secondary text-body-text text-neu-black font-light leading-8 md:text-text-small">
-                                                        Whether it's shaping a memorable logo, and entire brand system
-                                                        or crafting engaging content for a campaign, we're here to
-                                                        amplify your brand's voice and leave an enduring impression.
-                                                    </p>
-                                                </div>
-                                        </li>
-                                        <li class="service-list accordion-item pb-[9px] cursor-pointer"
-                                            @click="openTab = openTab === 2 ? null : 2"
-                                            :class="{ 'accordion-content-item': true, 'open-info': openTab === 2 }">
-                                            <div class="accordion-item-wrapper w-full">
-                                                <div
-                                                    class="service-accordion accordion-head text-neu-black text-[40px] md:text-[30px] font-secondary font-normal leading-normal tracking-[-.8px] pb-4">
-                                                    Digital Marketing
-                                                </div>
-                                                <div class="service-accordion-desc accordion-desc pt-6 pb-8"
-                                                    x-show="openTab === 2">
-                                                    <p
-                                                        class="description-text max-w-[685px] font-secondary  has-anim-text linesUp text-body-text text-neu-black font-light leading-8 md:text-text-small">
-                                                        Whether it's shaping a memorable logo, and entire brand system
-                                                        or crafting engaging content for a campaign, we're here to
-                                                        amplify your brand's voice and leave an enduring impression.
-                                                    </p>
-                                                </div>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- service section end here -->
+          
                     <!-- our story section start here -->
                     <section class="section bg-primary our story-section no-margin pt-[66px] pb-[116px] md:pb-[100px]">
                         <div class="custom-container no-margin">
